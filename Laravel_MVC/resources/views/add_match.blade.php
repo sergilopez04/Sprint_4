@@ -11,20 +11,36 @@
 
                 <div class="mb-4">
                     <label for="home_team_id" class="block text-sm font-medium text-gray-700">Home Team</label>
-                    <select name="home_team_id" id="home_team_id" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
-                        @foreach($teams as $team)
-                            <option value="{{ $team->id }}">{{ $team->name }}</option>
-                        @endforeach
-                    </select>
+                    <div class="relative">
+                        <select name="home_team_id" id="home_team_id" class="mt-1 block w-full border border-gray-300 rounded-md p-2 appearance-none bg-white text-gray-700 focus:outline-none focus:ring focus:ring-green-500" required>
+                            <option value="" disabled selected>Select a team</option>
+                            @foreach($teams as $team)
+                                <option value="{{ $team->id }}">{{ $team->name }}</option>
+                            @endforeach
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10l5 5 5-5H7z"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mb-4">
                     <label for="away_team_id" class="block text-sm font-medium text-gray-700">Away Team</label>
-                    <select name="away_team_id" id="away_team_id" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
-                        @foreach($teams as $team)
-                            <option value="{{ $team->id }}">{{ $team->name }}</option>
-                        @endforeach
-                    </select>
+                    <div class="relative">
+                        <select name="away_team_id" id="away_team_id" class="mt-1 block w-full border border-gray-300 rounded-md p-2 appearance-none bg-white text-gray-700 focus:outline-none focus:ring focus:ring-green-500" required>
+                            <option value="" disabled selected>Select a team</option>
+                            @foreach($teams as $team)
+                                <option value="{{ $team->id }}">{{ $team->name }}</option>
+                            @endforeach
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10l5 5 5-5H7z"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mb-4">
