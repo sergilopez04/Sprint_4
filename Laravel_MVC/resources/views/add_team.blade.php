@@ -29,7 +29,7 @@
                     <input type="file" name="image" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
                 </div>
                 <div>
-                    <input type="submit" value="Add to the DataBase" class="w-full bg-green-800 text-white font-bold py-2 rounded-md hover:bg-green-700 transition duration-200">
+                    <input type="submit" value="Add" class="w-full bg-green-800 text-white font-bold py-2 rounded-md hover:bg-green-700 transition duration-200">
                 </div>
             </form>
         </div>
