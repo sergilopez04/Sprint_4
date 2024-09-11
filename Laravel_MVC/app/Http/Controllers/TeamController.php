@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Teams;
 
-class AddTeamController extends Controller
+class TeamController extends Controller
 {
     public function index()
     {
