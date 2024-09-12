@@ -1,12 +1,12 @@
-@extends('layouts.app') <!-- Extiende la plantilla base -->
+@extends('layouts.app')
 
-@section('title', 'Add a Match') <!-- Título específico para esta vista -->
+@section('title', 'Add a Match') 
 
-@section('content') <!-- Contenido específico -->
+@section('content')
     <div class="flex items-center justify-center min-h-screen">
         <div class="bg-white p-8 rounded-lg shadow-md w-96">
             <h1 class="text-2xl font-bold mb-6 text-center">Add a Match</h1>
-            <form action="{{ url('/add_match') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('matches.create') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-4">
