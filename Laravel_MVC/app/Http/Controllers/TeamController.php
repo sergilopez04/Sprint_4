@@ -29,16 +29,16 @@ class TeamController extends Controller
             $data->category = $request->team_category;
             $data->save();
 
-            return redirect()->back()->with('success', 'Team added successfully!');
+            return redirect()->route('teams.edit')->with('success', 'Team updated successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         }
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $team = Teams::findOrFail($id);
-        return view('edit_team', compact('team'));
+        $teams = Teams::all();
+        return view('edit_team', compact('teams'));
     }
 
     public function update(Request $request, $id)
@@ -57,7 +57,7 @@ class TeamController extends Controller
             $team->category = $request->team_category;
             $team->save();
 
-            return redirect()->route('teams.index')->with('success', 'Team updated successfully!');
+            return redirect()->route('teams.edit')->with('success', 'Team updated successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         }
@@ -69,7 +69,7 @@ class TeamController extends Controller
             $team = Teams::findOrFail($id);
             $team->delete();
 
-            return redirect()->route('teams.index')->with('success', 'Team deleted successfully!');
+            return redirect()->route('teams.edit')->with('success', 'Team deleted successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         }
