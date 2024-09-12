@@ -14,7 +14,7 @@ class MatchController extends Controller
         return view('add_match', compact('teams'));
     }
 
-    public function add_Match(Request $request)
+    public function create(Request $request)
     {
         $request->validate([
             'home_team_id' => 'required|exists:teams,id',
@@ -41,7 +41,7 @@ class MatchController extends Controller
     {
         $match = Matches::findOrFail($id);
         $teams = Teams::all();
-        return view('edit_match', compact('match', 'teams'));
+        return view('home', compact('match', 'teams'));
     }
 
     public function update(Request $request, $id)
@@ -61,7 +61,7 @@ class MatchController extends Controller
             $match->score = $request->score;
             $match->save();
 
-            return redirect()->route('matches.index')->with('success', 'Match updated successfully!');
+            return redirect()->route('home')->with('success', 'Match updated successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         }

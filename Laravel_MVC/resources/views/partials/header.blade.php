@@ -7,5 +7,3 @@
         <a href="{{ route('matches.index') }}" class="text-white font-bold hover:text-green-300 flex-grow basis-1/4 text-center">Create Matches</a>
     </div>
 </nav>
-
-

@@ -10,16 +10,16 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Teams::all();
-        return view('edit_team', compact('teams'));
+        return view('add_team', compact('teams'));
     }
 
-    public function add_team(Request $request)
+    public function create(Request $request)
     {
         // Validación de los datos de entrada
         $request->validate([
             'team_name' => 'required|string|max:255',
             'team_city' => 'required|string|max:255',
-            'team_category' => 'required|string|max:255', 
+            'team_category' => 'required|string|max:255',
         ]);
 
         try {
@@ -37,7 +37,7 @@ class TeamController extends Controller
 
     public function edit($id)
     {
-        $team = Teams::findOrFail($id); 
+        $team = Teams::findOrFail($id);
         return view('edit_team', compact('team'));
     }
 
@@ -47,7 +47,7 @@ class TeamController extends Controller
         $request->validate([
             'team_name' => 'required|string|max:255',
             'team_city' => 'required|string|max:255',
-            'team_category' => 'required|string|max:255', 
+            'team_category' => 'required|string|max:255',
         ]);
 
         try {

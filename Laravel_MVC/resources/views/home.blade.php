@@ -9,7 +9,7 @@
             <div class="bg-white p-6 rounded-lg shadow-md w-1/3">
                 <div class="flex items-center justify-between mb-4">
                     <h1 class="text-2xl font-bold flex-grow text-center">Teams</h1>
-                    <a href="{{ route('teams.index') }}" class="text-blue-500 hover:text-blue-700 ml-4">
+                    <a href="{{ route('teams.edit') }}" class="text-blue-500 hover:text-blue-700 ml-4">
                         <i class="fas fa-edit fa-lg"></i>
                     </a>
                 </div>
